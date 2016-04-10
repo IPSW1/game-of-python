@@ -5,7 +5,7 @@ It provides a command line interface with a few known patterns and you have the 
 
 Here you can see a pulsar ([ttyrec](http://0xcc.net/ttyrec/index.html.en) and [ttygif](https://github.com/icholy/ttygif) made it seem a bit slow, but it's actually very smooth):  
 
-![](tty.gif)
+![](pulsar.gif)
 
 ##Patterns
 * Blinker
