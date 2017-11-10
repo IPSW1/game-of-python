@@ -17,23 +17,23 @@ def main():
 
         mode = int(input())
         if mode == 1:
-            blinker()
+            play(3, 3, patterns.blinker, 10, 0.5) # blinker
         elif mode == 2:
-            toad()
+            play(4, 4, patterns.toad, 10, 0.5) # toad
         elif mode == 3:
-            beacon()
+            play(4, 4, patterns.beacon, 10, 0.5) # beacon
         elif mode == 4:
-            pulsar()
+            play(15, 15, patterns.pulsar, 12, 0.3) # pulsar
         elif mode == 5:
-            glider()
+            play(12, 12, patterns.glider, 36, 0.2) # glider
         elif mode == 6:
-            lwss()
+            play(20, 6, patterns.lwss, 36, 0.2) # lighweight spaceship
         elif mode == 7:
-            glider_gun()
+            play(50, 30, patterns.gun, 200, 0.01) # glider gun
         elif mode == 8:
             custom_field()
         elif mode == 0:
-            sys.exit()
+            sys.exit() # exit
         else:
             print("No valid option. Please enter one of the above modes.\n")
 
@@ -99,59 +99,22 @@ def print_array(array, hor, vert):
                     print(" ", end='')
 
 
-def blinker():
-    field = blinker
-    new_field = [[0 for x in range(3)] for x in range(3)]
-    play(3, 3, patterns.blinker, 10, 0.5)
-
-
-def toad():
-    field = toad
-    new_field = [[0 for x in range(4)] for x in range(4)]
-    play(4, 4, patterns.toad, 10, 0.5)
-
-
-def beacon():
-    new_field = [[0 for x in range(4)] for x in range(4)]
-    play(4, 4, patterns.beacon, 10, 0.5)
-
-
-def pulsar():
-        new_field = [[0 for x in range(15)] for x in range(15)]
-        play(15, 15, patterns.pulsar, 12, 0.3)
-
-
-def glider():
-    new_field = [[0 for x in range(12)] for x in range(12)]
-    play(12, 12, patterns.glider, 36, 0.2)
-
-
-def lwss():
-    new_field = [[0 for x in range(20)] for x in range(6)]
-    play(20, 6, patterns.lwss, 36, 0.2)
-
-
-def glider_gun():
-    new_field = [[0 for x in range(50)] for x in range(30)]
-    play(50, 30, patterns.gun, 200, 0.01)
-
-
 def custom_field():
-    vert = int(raw_input("Height: "))
-    hor = int(raw_input("Width: "))
+    vert = int(input("Height: "))
+    hor = int(input("Width: "))
     print("Enter your field (1 is living, 0 is dead; separated by spaces)")
 
     field = [[0 for x in range(hor)] for x in range(vert)]
     new_field = [[0 for x in range(hor)] for x in range(vert)]
 
     for i in range(vert):
-        field_input = raw_input()
+        field_input = input()
         for j in range(hor):
             field_input_arr = field_input.split(" ", hor)
             field[i][j] = int(field_input_arr[j])
 
-    iteration = int(raw_input("Iterations: "))
-    speed = float(raw_input("Speed in seconds (for example 0.5): "))
+    iteration = int(input("Iterations: "))
+    speed = float(input("Speed in seconds (for example 0.5): "))
     print_array(field, hor, vert)
     play(hor, vert, field, iteration, speed)
 
