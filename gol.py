@@ -3,19 +3,19 @@ import patterns
 
 def main():
     while True:
-        print "Choose a mode: "
-        print "1) Blinker"
-        print "2) Toad"
-        print "3) Beacon"
-        print "4) Pulsar"
-        print "5) Glider"
-        print "6) Lightweight spaceship"
-        print "7) Glider gun"
-        print "8) Enter custom field..."
-        print "0) Exit"
-        print "---------------------------"
+        print("Choose a mode: ")
+        print("1) Blinker")
+        print("2) Toad")
+        print("3) Beacon")
+        print("4) Pulsar")
+        print("5) Glider")
+        print("6) Lightweight spaceship")
+        print("7) Glider gun")
+        print("8) Enter custom field...")
+        print("0) Exit")
+        print("---------------------------")
 
-        mode = int(raw_input())
+        mode = int(input())
         if mode == 1:
             blinker()
         elif mode == 2:
@@ -35,7 +35,7 @@ def main():
         elif mode == 0:
             sys.exit()
         else:
-            print "No valid option. Please enter one of the above modes.\n"
+            print("No valid option. Please enter one of the above modes.\n")
 
 
 def play(hor, vert, field, iterations, speed):
@@ -89,14 +89,14 @@ def print_array(array, hor, vert):
         for j in range(hor):
             if j == hor - 1:
                 if array[i][j] != 0:
-                    print u"\u2587" #Print a block character
+                    print(u"\u2587") #Print a block character
                 else:
-                    print " "
+                    print(" ")
             else:
                 if array[i][j] != 0:
-                    print u"\u2587",
+                    print(u"\u2587", end='')
                 else:
-                    print " ",
+                    print(" ", end='')
 
 
 def blinker():
@@ -139,7 +139,7 @@ def glider_gun():
 def custom_field():
     vert = int(raw_input("Height: "))
     hor = int(raw_input("Width: "))
-    print "Enter your field (1 is living, 0 is dead; separated by spaces)"
+    print("Enter your field (1 is living, 0 is dead; separated by spaces)")
 
     field = [[0 for x in range(hor)] for x in range(vert)]
     new_field = [[0 for x in range(hor)] for x in range(vert)]
